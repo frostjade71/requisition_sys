@@ -1,0 +1,83 @@
+/* Compact Timeline Variant for Approval Timeline */
+.timeline.compact {
+    padding: var(--spacing-md) 0;
+}
+
+.timeline.compact .timeline-item {
+    padding-left: 45px;
+    padding-bottom: var(--spacing-lg);
+}
+
+.timeline.compact .timeline-item::before {
+    left: 14px;
+    top: 25px;
+    width: 2px;
+}
+
+.timeline.compact .timeline-dot {
+    width: 28px;
+    height: 28px;
+    font-size: 0.875rem;
+    border: 2px solid var(--white);
+}
+
+.timeline.compact .timeline-item.approved .timeline-dot {
+    box-shadow: 0 0 0 2px rgba(56, 142, 60, 0.15);
+}
+
+.timeline.compact .timeline-item.rejected .timeline-dot {
+    box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.15);
+}
+
+.timeline.compact .timeline-content {
+    padding: var(--spacing-md);
+    border-left-width: 3px;
+}
+
+.timeline.compact .timeline-header {
+    margin-bottom: var(--spacing-sm);
+}
+
+.timeline.compact .timeline-level {
+    font-size: 0.75rem;
+}
+
+.timeline.compact .timeline-title {
+    font-size: 0.9375rem;
+    margin: 4px 0;
+}
+
+.timeline.compact .timeline-meta {
+    gap: 6px;
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+    font-size: 0.8125rem;
+}
+
+.timeline.compact .timeline-approver,
+.timeline.compact .timeline-date,
+.timeline.compact .timeline-remarks {
+    font-size: 0.8125rem;
+}
+
+.timeline.compact .timeline-remarks {
+    padding: var(--spacing-xs);
+    margin-top: 6px;
+}
+
+/* Mobile adjustments for compact timeline */
+@media (max-width: 768px) {
+    .timeline.compact .timeline-item {
+        padding-left: 38px;
+    }
+
+    .timeline.compact .timeline-dot {
+        width: 24px;
+        height: 24px;
+        font-size: 0.75rem;
+    }
+
+    .timeline.compact .timeline-item::before {
+        left: 11px;
+    }
+}

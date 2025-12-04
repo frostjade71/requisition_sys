@@ -1,0 +1,10 @@
+.env
+vendor/
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+
+requisition_db.sql
+schema.sql
+seed.sql

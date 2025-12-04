@@ -1,0 +1,286 @@
+/* Header Styles - Redesigned to match tracking_sys_clone */
+:root {
+    /* Color Variables */
+    --primary-red: #DC2626;
+    --primary-red-dark: #991B1B;
+    --accent-yellow: #FBBF24;
+    --white: #FFFFFF;
+    --off-white: #FAFAFA;
+    --light-gray: #F3F4F6;
+    --text-dark: #1F2937;
+    --text-gray: #6B7280;
+    --border-light: #E5E7EB;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Main Navigation Bar */
+.navbar {
+    background: linear-gradient(180deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+    box-shadow: var(--shadow-lg);
+    padding: 0.75rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--accent-yellow);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Brand/Logo */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    height: 50px;
+}
+
+.navbar-brand:hover {
+    transform: translateY(-2px);
+}
+
+/* Logo icon (small L3 logo) */
+.navbar-brand .logo-icon {
+    height: 100%;
+    width: auto;
+    margin-right: 10px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Text logo */
+.navbar-brand .logo-text {
+    height: 70%;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Adjust for mobile */
+@media (max-width: 768px) {
+    .navbar-brand {
+        height: 40px;
+    }
+
+    .navbar-brand .logo-text {
+        max-width: 150px;
+    }
+}
+
+/* Navigation Menu */
+.navbar-menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.navbar-nav li {
+    margin-left: 0.4rem;
+    position: relative;
+}
+
+.navbar-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* Hover state for regular links */
+.navbar-nav a:not(.active):hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Active state - always visible when on the page */
+.navbar-nav a.active {
+    background-color: var(--accent-yellow) !important;
+    color: var(--primary-red-dark) !important;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover state for active links */
+.navbar-nav a.active:hover {
+    background-color: #F59E0B !important;
+    transform: translateY(-1px);
+}
+
+/* Buttons in Nav */
+.navbar-nav .btn {
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow);
+}
+
+/* Primary button - Used for Staff Login */
+.navbar-nav .btn-primary {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+    font-weight: 600;
+    transition: all 0.2s ease !important;
+}
+
+.navbar-nav .btn-primary:hover {
+    background-color: var(--accent-yellow) !important;
+    color: #FFFFFF !important;
+    border-color: var(--accent-yellow) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-nav .btn-danger {
+    background-color: #EF4444;
+    color: white;
+}
+
+.navbar-nav .btn-danger:hover {
+    background-color: #DC2626;
+    transform: translateY(-2px);
+}
+
+/* User Menu */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: 0.4rem;
+    padding-left: 0.4rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-menu span {
+    color: var(--white);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Mobile Toggle Button */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.navbar-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .navbar-menu {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background: linear-gradient(180deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 80px;
+        padding-left: 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-menu.active {
+        right: 0;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .navbar-nav li {
+        margin: 0.5rem 0;
+        width: 100%;
+    }
+
+    .navbar-nav a {
+        padding: 0.75rem 0;
+        width: 100%;
+    }
+
+    .user-menu {
+        margin: 0.5rem 0 0 0;
+        padding: 0.75rem 0 0 0;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .navbar-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+/* Overlay for mobile menu */
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    display: block;
+    opacity: 1;
+}

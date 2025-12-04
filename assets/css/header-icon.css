@@ -1,0 +1,27 @@
+/* Dashboard Header Title Icon Styles */
+
+.dashboard-header h1 {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.header-title-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    flex-shrink: 0;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .header-title-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .dashboard-header h1 {
+        gap: 8px !important;
+    }
+}
