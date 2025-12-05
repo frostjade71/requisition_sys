@@ -72,12 +72,12 @@ $recent_activity = $stmt->fetchAll();
 <div class="page-container">
     <div class="page-header">
         <div class="header-content">
-            <h1>System Analytics</h1>
+            <h1>
+                <img src="<?php echo BASE_URL; ?>/assets/css/icons/google-analytics.png" alt="System Analytics" style="width: 36px; height: 36px; object-fit: contain; vertical-align: middle; margin-right: 12px;">
+                System Analytics
+            </h1>
             <p class="subtitle">Comprehensive overview of system performance and usage.</p>
         </div>
-        <a href="<?php echo BASE_URL; ?>/admin/dashboard.php" class="btn-back">
-            <span class="icon">←</span> Back to Dashboard
-        </a>
     </div>
     
     <!-- Summary Cards -->
@@ -306,7 +306,7 @@ $recent_activity = $stmt->fetchAll();
     .page-header h1 {
         font-size: 2rem;
         font-weight: 800;
-        color: var(--text-primary);
+        color: #000000;
         margin-bottom: 0.5rem;
         letter-spacing: -0.5px;
     }
@@ -315,6 +315,7 @@ $recent_activity = $stmt->fetchAll();
         color: var(--text-secondary);
         font-size: 1.1rem;
         margin: 0;
+        padding-left: 48px;
     }
 
     .btn-back {
@@ -347,7 +348,6 @@ $recent_activity = $stmt->fetchAll();
     }
 
     .stat-card {
-        background: var(--card-bg);
         padding: 1.5rem;
         border-radius: var(--radius-lg);
         box-shadow: var(--shadow-sm);
@@ -355,7 +355,8 @@ $recent_activity = $stmt->fetchAll();
         align-items: center;
         gap: 1.25rem;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: 1px solid rgba(0,0,0,0.03);
+        position: relative;
+        overflow: hidden;
     }
 
     .stat-card:hover {
@@ -384,11 +385,31 @@ $recent_activity = $stmt->fetchAll();
     .stat-card.pending .stat-icon-wrapper { background-color: rgba(241, 196, 15, 0.1); color: #f1c40f; }
     .stat-card.approved .stat-icon-wrapper { background-color: rgba(46, 204, 113, 0.1); color: #2ecc71; }
     .stat-card.rejected .stat-icon-wrapper { background-color: rgba(231, 76, 60, 0.1); color: #e74c3c; }
+    
+    .stat-card.total {
+        background: #ffffff;
+        border: 4px solid #3498db;
+    }
+    
+    .stat-card.pending {
+        background: #ffffff;
+        border: 4px solid #f1c40f;
+    }
+    
+    .stat-card.approved {
+        background: #ffffff;
+        border: 4px solid #2ecc71;
+    }
+    
+    .stat-card.rejected {
+        background: #ffffff;
+        border: 4px solid #e74c3c;
+    }
 
     .stat-value {
         font-size: 2.25rem;
         font-weight: 800;
-        color: var(--text-primary);
+        color: #000000;
         line-height: 1;
         margin-bottom: 0.25rem;
     }
@@ -397,6 +418,7 @@ $recent_activity = $stmt->fetchAll();
         font-size: 0.9rem;
         color: var(--text-secondary);
         font-weight: 500;
+        text-transform: uppercase;
     }
 
     /* Reports Grid */

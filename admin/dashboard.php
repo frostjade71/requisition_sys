@@ -44,8 +44,15 @@ $recent_requests = $stmt->fetchAll();
             </h1>
             <p class="subtitle">Welcome back, <?php echo htmlspecialchars(explode(' ', $_SESSION['user_name'])[0]); ?>. Here's what's happening today.</p>
         </div>
-        <div class="header-actions">
-            <span class="date-badge"><?php echo date('F j, Y'); ?></span>
+        <div class="stat-card datetime">
+            <div class="stat-icon-wrapper">
+                <img src="<?php echo BASE_URL; ?>/assets/css/icons/calendar.png" alt="Date & Time" class="stat-icon-img">
+            </div>
+            <div class="stat-details">
+                <div class="stat-value" id="currentDate"><?php echo date('M d, Y'); ?></div>
+                <div class="stat-label" id="currentTime"></div>
+            </div>
+            <div class="stat-chart-bg"></div>
         </div>
     </div>
     
@@ -264,7 +271,7 @@ $recent_requests = $stmt->fetchAll();
     .dashboard-header {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: center;
         margin-bottom: 2.5rem;
         padding-bottom: 1rem;
         border-bottom: 1px solid var(--border-color);
@@ -306,7 +313,6 @@ $recent_requests = $stmt->fetchAll();
     }
 
     .stat-card {
-        background: var(--card-bg);
         padding: 1.5rem;
         border-radius: var(--radius-lg);
         box-shadow: var(--shadow-sm);
@@ -345,6 +351,26 @@ $recent_requests = $stmt->fetchAll();
     .stat-card.pending .stat-icon-wrapper { color: #f1c40f; }
     .stat-card.approved .stat-icon-wrapper { color: #2ecc71; }
     .stat-card.rejected .stat-icon-wrapper { color: #e74c3c; }
+    
+    .stat-card.total {
+        background: #ffffff;
+        border: 4px solid #3498db;
+    }
+    
+    .stat-card.pending {
+        background: #ffffff;
+        border: 4px solid #f1c40f;
+    }
+    
+    .stat-card.approved {
+        background: #ffffff;
+        border: 4px solid #2ecc71;
+    }
+    
+    .stat-card.rejected {
+        background: #ffffff;
+        border: 4px solid #e74c3c;
+    }
 
     .stat-details {
         z-index: 1;
@@ -353,7 +379,7 @@ $recent_requests = $stmt->fetchAll();
     .stat-value {
         font-size: 2.25rem;
         font-weight: 800;
-        color: var(--text-primary);
+        color: #000000;
         line-height: 1;
         margin-bottom: 0.25rem;
     }
@@ -362,6 +388,7 @@ $recent_requests = $stmt->fetchAll();
         font-size: 0.9rem;
         color: var(--text-secondary);
         font-weight: 500;
+        text-transform: uppercase;
     }
 
     /* Content Grid */
@@ -441,6 +468,27 @@ $recent_requests = $stmt->fetchAll();
         border-bottom: 2px solid var(--primary-dark);
     }
 
+    .user-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .user-avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: #4a6cf7;
+        color: white;
+        font-weight: 600;
+        font-size: 14px;
+        flex-shrink: 0;
+        overflow: hidden;
+    }
+    
     .modern-table td {
         padding: 1rem;
         vertical-align: middle;
@@ -676,6 +724,53 @@ $recent_requests = $stmt->fetchAll();
             grid-template-columns: 1fr;
         }
     }
+    
+    .stat-card.datetime {
+        padding: 0.75rem 1rem;
+        max-width: 240px;
+    }
+    
+    .stat-card.datetime .stat-icon-wrapper { 
+        background-color: rgba(52, 152, 219, 0.1); 
+        color: #3498db;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .stat-card.datetime .stat-icon-img {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .stat-card.datetime .stat-value {
+        font-size: 0.95rem;
+        margin-bottom: 0.15rem;
+    }
+    
+    .stat-card.datetime .stat-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--text-primary);
+    }
 </style>
+
+<script>
+function updateTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const timeString = `${hours}:${minutes}:${seconds}`;
+    
+    const timeElement = document.getElementById('currentTime');
+    if (timeElement) {
+        timeElement.textContent = timeString;
+    }
+}
+
+// Update time immediately and then every second
+updateTime();
+setInterval(updateTime, 1000);
+</script>
 
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>

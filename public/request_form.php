@@ -74,7 +74,7 @@ require_once __DIR__ . '/../includes/header.php';
                     </div>
                     
                     <p class="help-text">
-                        <strong>Note:</strong> Warehouse inventory and balance for purchase will be filled by the Warehouse Section Head during approval.
+                        <strong>Note:</strong> Warehouse inventory and balance for purchase will be filled by the Warehouse Section Head and the Budget Officer during approval.
                     </p>
                 </div>
                 

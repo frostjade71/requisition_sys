@@ -79,7 +79,7 @@
 
 .detail-label {
     font-size: 0.875rem;
-    color: var(--gray);
+    color: rgb(0, 0, 0);
     margin-bottom: var(--spacing-xs);
     font-weight: 500;
 }
@@ -99,14 +99,14 @@
 /* Timeline Styles */
 .timeline {
     position: relative;
-    padding: var(--spacing-md) 0;
+    padding: 8px 0;
 }
 
 .timeline-item {
     position: relative;
-    padding-left: 50px;
-    padding-bottom: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
+    padding-left: 40px;
+    padding-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .timeline-item:last-child {
@@ -117,10 +117,10 @@
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: 20px;
-    top: 25px;
+    left: 10px;
+    top: 20px;
     bottom: -5px;
-    width: 2px;
+    width: 1px;
     background-color: var(--light-gray);
 }
 
@@ -133,15 +133,15 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background-size: 18px;
+    background-size: 14px;
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--light-gray);
-    border: 3px solid var(--white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--white);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .timeline-item.pending .timeline-dot {
@@ -151,8 +151,8 @@
 
 .timeline-item.approved .timeline-dot {
     background-image: url('icons/check.png');
-    background-color: #4caf50;
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .timeline-item.rejected .timeline-dot {
@@ -172,11 +172,12 @@
 /* Timeline Content */
 .timeline-content {
     background-color: var(--white);
-    padding: var(--spacing-md);
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-sm);
-    border-left: 3px solid var(--light-gray);
-    font-size: 0.9rem;
+    padding: 10px 12px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border-left: 2px solid var(--light-gray);
+    font-size: 0.8rem;
+    line-height: 1.3;
 }
 
 .timeline-item.approved .timeline-content {
@@ -190,37 +191,38 @@
 .timeline-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: var(--spacing-xs);
+    align-items: center;
+    margin-bottom: 4px;
 }
 
 .timeline-level {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: var(--primary-color);
     text-transform: uppercase;
 }
 
 .timeline-title {
-    font-size: 1.125rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--dark);
-    margin: var(--spacing-xs) 0;
+    margin: 2px 0;
 }
 
 .timeline-meta {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
-    margin-top: var(--spacing-md);
-    padding-top: var(--spacing-md);
+    gap: 2px;
+    margin-top: 6px;
+    padding-top: 6px;
     border-top: 1px solid var(--light-gray);
+    font-size: 0.75rem;
 }
 
 .timeline-approver,
 .timeline-date,
 .timeline-remarks {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     color: var(--gray);
 }
 
@@ -233,9 +235,9 @@
     font-style: italic;
     color: var(--dark-gray);
     background-color: var(--lighter-gray);
-    padding: var(--spacing-sm);
-    border-radius: var(--radius-sm);
-    margin-top: var(--spacing-sm);
+    padding: 6px 8px;
+    border-radius: 3px;
+    margin-top: 6px;
 }
 
 /* No Results */

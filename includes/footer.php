@@ -5,9 +5,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>LEYECO III Electric Company</h4>
+                    <div class="footer-logo" style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                        <img src="<?php echo BASE_URL; ?>/assets/images/logoL3iii.webp" alt="LEYECO III Logo" style="height: 30px; width: auto;">
+                        <h4 style="margin: 0;">LEYECO III</h4>
+                    </div>
                     <p>Leyte III Electric Cooperative, Inc.</p>
-                    <p>Serving the communities with reliable electric service</p>
+                    <p><i>Lighting Houses, Lighting Homes, Lighting Hopes</i></p>
                 </div>
                 
                 <div class="footer-section">
@@ -27,9 +30,9 @@
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> LEYECO III Electric Company. All rights reserved.</p>
-                <p>Requisition Management System v1.0</p>
+            <div class="footer-bottom" style="font-size: 0.85rem; margin-top: var(--spacing-md);">
+                <p style="margin-bottom: 0.5rem;">&copy; <?php echo date('Y'); ?> LEYECO III. All rights reserved.</p>
+                <p style="margin: 0;">Requisition Management System v1.0</p>
             </div>
         </div>
     </footer>
@@ -43,21 +46,22 @@
         .footer {
             background: linear-gradient(135deg, var(--dark), var(--dark-gray));
             color: var(--white);
-            padding: var(--spacing-xxl) 0 var(--spacing-lg);
-            margin-top: var(--spacing-xxl);
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            font-size: 0.9rem;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-xl);
-            margin-bottom: var(--spacing-xl);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
         }
         
         .footer-section h4 {
             color: var(--secondary-color);
-            margin-bottom: var(--spacing-md);
-            font-size: 1.125rem;
+            margin-bottom: var(--spacing-sm);
+            font-size: 1rem;
         }
         
         .footer-section p {

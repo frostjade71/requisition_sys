@@ -564,23 +564,206 @@ tbody tr:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .container {
-        padding: 0 var(--spacing-sm);
+        padding: 0 var(--spacing-md);
     }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
 
+@media (max-width: 768px) {
+    /* Base font size reduction */
+    html {
+        font-size: 14px;
+    }
+    
+    /* Container adjustments */
+    .container {
+        padding: 0 12px;
+    }
+    
+    /* Typography scaling */
     h1 {
         font-size: 2rem;
+        margin-bottom: 1rem;
     }
-
+    
     h2 {
-        font-size: 1.75rem;
-    }
-
-    h3 {
         font-size: 1.5rem;
+        margin-bottom: 0.875rem;
     }
-
+    
+    h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    p, li, .text, .card, .btn {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    /* Hero section */
+    .hero-section {
+        padding: 2.5rem 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
+        padding: 0.6rem 1rem;
+    }
+    
+    /* Features section */
+    .features-section {
+        padding: 1.5rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.85rem !important;
+        margin-bottom: 0.75rem !important;
+        color: var(--text-gray);
+        line-height: 1.35;
+    }
+    
+    .features-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .feature-card {
+        padding: 1rem 1.25rem;
+        border-radius: var(--radius-md);
+        background: var(--white);
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border: 1px solid var(--light-gray);
+        width: 90%;
+        max-width: 380px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+    }
+    
+    .feature-icon {
+        font-size: 1.8rem;
+        margin: 0 auto 0.75rem auto;
+        color: var(--primary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        background: rgba(220, 38, 38, 0.1);
+        border-radius: 50%;
+    }
+    
+    .feature-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+        color: var(--text-dark);
+        text-align: center;
+    }
+    
+    .feature-content p {
+        font-size: 0.85rem;
+        color: var(--text-gray);
+        margin-bottom: 0;
+        line-height: 1.5;
+        text-align: center;
+        padding: 0 0.5rem;
+    }
+    
+    /* Workflow section */
+    .workflow-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .workflow-step {
+        padding: 0.75rem;
+    }
+    
+    /* Info section */
+    .info-section {
+        padding: 1.5rem 0;
+    }
+    
+    .info-section .card {
+        padding: 1.25rem;
+    }
+    
+    .info-section ul {
+        padding-left: 1.25rem;
+    }
+    
+    .info-section li {
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.85rem;
+    }
+    
+    .btn-lg {
+        padding: 0.6rem 1.25rem;
+        font-size: 0.95rem;
+    }
+    
+    /* General spacing adjustments */
+    .section-title {
+        margin-bottom: 1rem;
+    }
+    
+    .section-subtitle {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Card styles */
+    .card {
+        padding: 1rem;
+    }
+    
     .col-6,
     .col-4,
     .col-3 {

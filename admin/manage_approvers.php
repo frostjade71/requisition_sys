@@ -21,12 +21,12 @@ $approvers = $stmt->fetchAll();
 <div class="page-container">
     <div class="page-header">
         <div class="header-content">
-            <h1>Manage Approvers</h1>
+            <h1>
+                <img src="<?php echo BASE_URL; ?>/assets/css/icons/group.png" alt="Manage Approvers" style="width: 36px; height: 36px; object-fit: contain; vertical-align: middle; margin-right: 12px;">
+                Manage Approvers
+            </h1>
             <p class="subtitle">Configure system approvers and their authority levels.</p>
         </div>
-        <a href="<?php echo BASE_URL; ?>/admin/dashboard.php" class="btn-back">
-            <span class="icon">←</span> Back to Dashboard
-        </a>
     </div>
     
     <!-- Approvers Grid -->
@@ -176,7 +176,7 @@ $approvers = $stmt->fetchAll();
     .page-header h1 {
         font-size: 2rem;
         font-weight: 800;
-        color: var(--text-primary);
+        color: #000000;
         margin-bottom: 0.5rem;
         letter-spacing: -0.5px;
     }
@@ -185,6 +185,7 @@ $approvers = $stmt->fetchAll();
         color: var(--text-secondary);
         font-size: 1.1rem;
         margin: 0;
+        padding-left: 48px;
     }
 
     .btn-back {

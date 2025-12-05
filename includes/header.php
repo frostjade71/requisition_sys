@@ -82,8 +82,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         
                         <li class="user-menu">
                             <span><i class="fas fa-user-circle"></i> <?php echo htmlspecialchars($_SESSION['user_name'] ?? 'User'); ?></span>
-                            <a href="<?php echo BASE_URL; ?>/approver/logout.php" class="btn btn-danger">
-                                <i class="fas fa-sign-out-alt"></i> Logout
+                            <a href="<?php echo BASE_URL; ?>/approver/logout.php" class="btn btn-danger" title="Logout">
+                                <i class="fas fa-sign-out-alt"></i>
                             </a>
                         </li>
                     <?php endif; ?>

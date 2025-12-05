@@ -60,12 +60,12 @@ $requests = $stmt->fetchAll();
 <div class="page-container">
     <div class="page-header">
         <div class="header-content">
-            <h1>All Requisition Requests</h1>
+            <h1>
+                <img src="<?php echo BASE_URL; ?>/assets/css/icons/open-folder.png" alt="Requisition Requests" style="width: 36px; height: 36px; object-fit: contain; vertical-align: middle; margin-right: 12px;">
+                Requisition Requests
+            </h1>
             <p class="subtitle">Manage and track all requisition requests in the system.</p>
         </div>
-        <a href="<?php echo BASE_URL; ?>/admin/dashboard.php" class="btn-back">
-            <span class="icon">←</span> Back to Dashboard
-        </a>
     </div>
     
     <!-- Filters -->
@@ -233,7 +233,7 @@ $requests = $stmt->fetchAll();
     .page-header h1 {
         font-size: 2rem;
         font-weight: 800;
-        color: var(--text-primary);
+        color: #000000;
         margin-bottom: 0.5rem;
         letter-spacing: -0.5px;
     }
@@ -242,6 +242,7 @@ $requests = $stmt->fetchAll();
         color: var(--text-secondary);
         font-size: 1.1rem;
         margin: 0;
+        padding-left: 48px;
     }
 
     .btn-back {
@@ -503,6 +504,7 @@ $requests = $stmt->fetchAll();
     }
 
     .btn-view {
+        display: inline-block;
         padding: 0.5rem 1rem;
         background-color: transparent;
         border: 1px solid var(--primary-color);
@@ -512,6 +514,8 @@ $requests = $stmt->fetchAll();
         font-size: 0.85rem;
         font-weight: 600;
         transition: all 0.2s ease;
+        white-space: nowrap;
+        text-align: center;
     }
 
     .btn-view:hover {

@@ -1,83 +1,134 @@
-/* Compact Timeline Variant for Approval Timeline */
+/* Ultra Compact Timeline Variant for Approval Timeline */
 .timeline.compact {
-    padding: var(--spacing-md) 0;
+    padding: 6px 0;
 }
 
 .timeline.compact .timeline-item {
-    padding-left: 45px;
-    padding-bottom: var(--spacing-lg);
+    padding-left: 36px;
+    padding-bottom: 10px;
+    margin-bottom: 6px;
+}
+
+.timeline.compact .timeline-item:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .timeline.compact .timeline-item::before {
-    left: 14px;
-    top: 25px;
-    width: 2px;
+    left: 10px;
+    top: 20px;
+    bottom: -5px;
+    width: 1px;
+    background-color: var(--light-gray);
+}
+
+.timeline.compact .timeline-item:last-child::before {
+    display: none;
 }
 
 .timeline.compact .timeline-dot {
-    width: 28px;
-    height: 28px;
-    font-size: 0.875rem;
+    width: 20px;
+    height: 20px;
+    font-size: 0.75rem;
     border: 2px solid var(--white);
+    background-size: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .timeline.compact .timeline-item.approved .timeline-dot {
-    box-shadow: 0 0 0 2px rgba(56, 142, 60, 0.15);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 .timeline.compact .timeline-item.rejected .timeline-dot {
-    box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.15);
+    background-color: #f44336;
+    box-shadow: 0 0 0 2px rgba(244, 67, 84, 0.2);
 }
 
 .timeline.compact .timeline-content {
-    padding: var(--spacing-md);
-    border-left-width: 3px;
+    padding: 8px 10px;
+    border-left-width: 2px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    font-size: 0.8rem;
+    line-height: 1.3;
 }
 
 .timeline.compact .timeline-header {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .timeline.compact .timeline-level {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
 }
 
 .timeline.compact .timeline-title {
-    font-size: 0.9375rem;
-    margin: 4px 0;
+    font-size: 0.8rem;
+    margin: 2px 0;
+    font-weight: 600;
+    color: var(--dark);
 }
 
 .timeline.compact .timeline-meta {
-    gap: 6px;
-    margin-top: var(--spacing-sm);
-    padding-top: var(--spacing-sm);
-    font-size: 0.8125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid var(--light-gray);
+    font-size: 0.7rem;
 }
 
 .timeline.compact .timeline-approver,
 .timeline.compact .timeline-date,
 .timeline.compact .timeline-remarks {
-    font-size: 0.8125rem;
+    font-size: 0.7rem;
+    color: var(--gray);
 }
 
 .timeline.compact .timeline-remarks {
-    padding: var(--spacing-xs);
-    margin-top: 6px;
+    padding: 4px 6px;
+    margin-top: 4px;
+    font-style: italic;
+    color: var(--dark-gray);
+    background-color: var(--lighter-gray);
+    border-radius: 3px;
+    font-size: 0.7rem;
 }
 
 /* Mobile adjustments for compact timeline */
 @media (max-width: 768px) {
     .timeline.compact .timeline-item {
-        padding-left: 38px;
+        padding-left: 32px;
     }
 
     .timeline.compact .timeline-dot {
-        width: 24px;
-        height: 24px;
-        font-size: 0.75rem;
+        width: 18px;
+        height: 18px;
+        font-size: 0.7rem;
+        background-size: 10px;
     }
 
     .timeline.compact .timeline-item::before {
-        left: 11px;
+        left: 8px;
+        top: 18px;
+    }
+    
+    .timeline.compact .timeline-content {
+        padding: 6px 8px;
+        font-size: 0.75rem;
+    }
+    
+    .timeline.compact .timeline-meta,
+    .timeline.compact .timeline-approver,
+    .timeline.compact .timeline-date,
+    .timeline.compact .timeline-remarks {
+        font-size: 0.68rem;
     }
 }

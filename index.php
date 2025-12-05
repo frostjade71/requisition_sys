@@ -30,7 +30,9 @@ require_once __DIR__ . '/includes/header.php';
             
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">📋</div>
+                    <div class="feature-icon">
+                        <img src="<?php echo BASE_URL; ?>/assets/css/icons/contact-form.png" alt="Submit Request" class="feature-img">
+                    </div>
                     <div class="feature-content">
                         <h3>1. Submit Request</h3>
                         <p>Fill out the requisition form with your material requirements. No login required!</p>
@@ -38,7 +40,9 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
+                    <div class="feature-icon">
+                        <img src="<?php echo BASE_URL; ?>/assets/css/icons/approval.png" alt="Approval Process" class="feature-img">
+                    </div>
                     <div class="feature-content">
                         <h3>2. Approval Process</h3>
                         <p>Your request goes through a 5-level sequential approval workflow for proper authorization.</p>
@@ -46,7 +50,9 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">✅</div>
+                    <div class="feature-icon">
+                        <img src="<?php echo BASE_URL; ?>/assets/css/icons/search-file.png" alt="Track Progress" class="feature-img">
+                    </div>
                     <div class="feature-content">
                         <h3>3. Track Progress</h3>
                         <p>Monitor your request status in real-time using your unique RF Control Number.</p>
@@ -62,11 +68,16 @@ require_once __DIR__ . '/includes/header.php';
         
         <div class="workflow-timeline">
             <?php foreach (APPROVAL_LEVELS as $level => $description): ?>
+                <?php 
+                    $parts = explode(' - ', $description);
+                    $action = $parts[0];
+                    $role = $parts[1] ?? '';
+                ?>
                 <div class="workflow-step">
                     <div class="workflow-number"><?php echo $level; ?></div>
                     <div class="workflow-details">
-                        <h4>Level <?php echo $level; ?></h4>
-                        <p><?php echo $description; ?></p>
+                        <h4 class="mb-1"><?php echo $action; ?></h4>
+                        <p class="text-muted mb-0"><?php echo $role; ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -261,15 +272,6 @@ require_once __DIR__ . '/includes/header.php';
         box-shadow: var(--shadow-lg);
     }
     
-    .feature-icon {
-        font-size: 3rem;
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .feature-card h3 {
-        color: var(--primary-color);
-        margin-bottom: var(--spacing-md);
-    }
     
     .workflow-section {
         margin-bottom: var(--spacing-xxl);
@@ -282,12 +284,44 @@ require_once __DIR__ . '/includes/header.php';
     .workflow-section h2 {
         color: var(--primary-color);
         margin-bottom: var(--spacing-xl);
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .workflow-section h2::after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 4px;
+        background: var(--secondary-color);
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
     }
     
     .workflow-timeline {
         max-width: 800px;
         margin: 0 auto;
         position: relative;
+    }
+    
+    /* Feature Icons */
+    .feature-icon {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .feature-icon img.feature-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
     
     .workflow-step {
@@ -298,6 +332,9 @@ require_once __DIR__ . '/includes/header.php';
         margin-bottom: var(--spacing-md);
         color: var(--dark);
         box-shadow: var(--shadow-sm);
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
     }
     
     .workflow-step h4 {
@@ -322,11 +359,16 @@ require_once __DIR__ . '/includes/header.php';
         justify-content: center;
         font-size: 1.5rem;
         font-weight: bold;
+        margin: 0;
     }
     
     .workflow-details h4 {
         color: var(--primary-color);
-        margin-bottom: var(--spacing-sm);
+        margin: 0 0 var(--spacing-xs) 0;
+    }
+    
+    .workflow-details p {
+        margin: 0;
     }
     
     .info-section ul {
@@ -354,10 +396,30 @@ require_once __DIR__ . '/includes/header.php';
         .workflow-step {
             flex-direction: column;
             text-align: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
         }
         
         .workflow-number {
-            margin: 0 auto;
+            margin: 0 auto 0.75rem auto;
+            width: 45px;
+            height: 45px;
+            font-size: 1.25rem;
+        }
+        
+        .workflow-details {
+            width: 100%;
+        }
+        
+        .workflow-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .workflow-details p {
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
     }
 </style>

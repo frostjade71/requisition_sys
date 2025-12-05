@@ -28,14 +28,10 @@ if (APP_ENV === 'development') {
 
 // Departments
 define('DEPARTMENTS', [
-    'Engineering Department',
-    'Operations Department',
-    'Technical Services',
-    'Administrative Department',
-    'Finance Department',
-    'Human Resources',
-    'Customer Service',
-    'Maintenance Department'
+    'Finance Services Department',
+    'Institutional Services Department',
+    'Technical Services Department',
+    'Office of the General Manager'
 ]);
 
 // Units of Measurement
